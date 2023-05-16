@@ -13,7 +13,7 @@ app.use(cookieParser());
 app.use('/uploads',express.static( './uploads'))
 app.use(cors({
     credentials:true,
-    origin: process.env.CLIENT_URL
+    origin: true
 }));
 app.use('/api' , router);
 app.use(errorMiddleware);
