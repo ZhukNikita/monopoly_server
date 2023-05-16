@@ -12,7 +12,6 @@ router.post('/registration' ,
     body('name').isLength({min: 3, max: 20}),
     userController.registration);
 router.post('/login' , userController.login);
-router.post('/uploadUserImg' , userController.login);
 router.post('/logout' , userController.logout);
 router.get('/activate/:link' , userController.activate);
 router.get('/refresh' , userController.refresh);
