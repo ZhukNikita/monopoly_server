@@ -6,7 +6,6 @@ class UserController{
         try{
             const errors = validationResult(req)
             if(!errors.isEmpty()){
-                console.log(req.body)
                 return next(ApiError.BadRequest("Ошибка при валидации", errors.array()))
             }
             const {email , password, name } = req.body
@@ -18,7 +17,6 @@ class UserController{
                     httpOnly:true,
                     secure: true,
                     sameSite:'none',
-                    domain:"monopoly-server-two.vercel.app"
                 })
             return res.json(userData)
         }
@@ -37,7 +35,6 @@ class UserController{
                     httpOnly:true,
                     secure: true,
                     sameSite:'none',
-                    domain:"monopoly-server-two.vercel.app"
                 })
             return res.json(userData)
         }
@@ -76,7 +73,6 @@ class UserController{
                 httpOnly:true,
                 secure: true ,
                 sameSite:'none',
-                domain:"monopoly-server-two.vercel.app"
             })
             return res.json(userData)
         }
